@@ -41,13 +41,13 @@ candidates.jsonl (100K)
 [05] Sort descending, take top 100, generate per-candidate reasoning
         │
         ▼
-team_prajwal.csv
+team_infiniity.csv
 ```
 
 ## Run
 
 ```bash
-python rank.py --candidates candidates.jsonl --out team_prajwal.csv
+python rank.py --candidates candidates.jsonl --out team_infiniity.csv
 ```
 
 **No pip installs required** — uses only Python stdlib (`json`, `csv`, `datetime`, `argparse`).
@@ -55,7 +55,7 @@ python rank.py --candidates candidates.jsonl --out team_prajwal.csv
 ## Validate
 
 ```bash
-python validate_submission.py team_prajwal.csv
+python validate_submission.py team_infiniity.csv
 # → Submission is valid.
 ```
 
@@ -74,6 +74,6 @@ python validate_submission.py team_prajwal.csv
 | File | Purpose |
 |---|---|
 | `rank.py` | Main ranker — run this |
-| `team_prajwal.csv` | Final submission (top-100 ranked candidates) |
+| `team_infiniity.csv` | Final submission (top-100 ranked candidates) |
 | `submission_metadata.yaml` | Portal metadata |
 | `validate_submission.py` | Official format validator |
