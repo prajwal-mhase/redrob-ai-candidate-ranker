@@ -1,0 +1,55 @@
+team_name: "prajwal-mhase"
+
+primary_contact:
+  name: "Prajwal Suresh Mhase"
+  email: "prajwalmhase222@gmail.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Prajwal Suresh Mhase"
+    email: "prajwalmhase222@gmail.com"
+    role: "Solo — ML Engineering, Ranking System, Deck"
+
+github_repo: "https://github.com/prajwalmhase/redrob-ranker"
+sandbox_link: "https://huggingface.co/spaces/prajwalmhase/redrob-ranker"
+reproduce_command: "python rank.py --candidates candidates.jsonl --out team_prajwal.csv"
+
+compute:
+  platform: "Local CPU machine"
+  cpu_cores: 4
+  ram_gb: 16
+  python_version: "3.10+"
+  os: "Linux / macOS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+  - "GitHub Copilot"
+
+ai_usage_summary: |
+  Used Claude for architectural discussion and code review. Used Copilot for
+  autocomplete. No candidate data was fed to any LLM. All ranking logic and
+  signal weights were designed by the author based on reading the JD and
+  signals documentation.
+
+methodology_summary: |
+  Multi-signal hybrid ranker with explicit feature engineering. Five scored
+  components — Skills (35%), Career (28%), Experience (17%), Location (12%),
+  Coherence (8%) — combined via weighted sum, then multiplied by a behavioral
+  availability modifier (0.35–1.35×). Skills are trust-weighted by endorsements
+  and duration (not raw listing). Career scoring penalises pure-consulting
+  backgrounds and rewards production deployment evidence in job descriptions.
+  Behavioral multiplier down-weights candidates inactive >180d, low response
+  rate, or long notice periods. Honeypot detection catches impossible timelines,
+  breadth-expert profiles, and title-skill incoherence. Runtime: 28s for 100K
+  candidates on CPU, zero network calls.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
